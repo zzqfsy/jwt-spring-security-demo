@@ -15,7 +15,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.zerhusen.security.JwtAuthenticationEntryPoint;
-import org.zerhusen.security.JwtAuthenticationTokenFilter;
+import org.zerhusen.security.filter.CORSFilter;
+import org.zerhusen.security.filter.JwtAuthenticationTokenFilter;
 
 @SuppressWarnings("SpringJavaAutowiringInspection")
 @Configuration
@@ -44,6 +45,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
     @Bean
     public JwtAuthenticationTokenFilter authenticationTokenFilterBean() throws Exception {
         return new JwtAuthenticationTokenFilter();
+    }
+
+    @Bean
+    public CORSFilter CORSFilter() throws Exception {
+        return new CORSFilter();
     }
 
     @Override

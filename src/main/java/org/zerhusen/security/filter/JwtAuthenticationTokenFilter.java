@@ -1,4 +1,4 @@
-package org.zerhusen.security;
+package org.zerhusen.security.filter;
 
 import java.io.IOException;
 import javax.servlet.FilterChain;
@@ -16,6 +16,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.web.authentication.WebAuthenticationDetailsSource;
 import org.springframework.web.filter.OncePerRequestFilter;
+import org.zerhusen.security.JwtTokenUtil;
 
 public class JwtAuthenticationTokenFilter extends OncePerRequestFilter {
 
